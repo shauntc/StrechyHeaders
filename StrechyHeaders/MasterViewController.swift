@@ -133,7 +133,7 @@ class MasterViewController: UITableViewController {
     func updateHeaderView(){
         if tableView.contentOffset.y <= 0
         {
-            headerView.frame = CGRect(x: 0 , y:tableView.contentOffset.y, width: tableView.frame.width, height: -tableView.contentOffset.y + kTableHeaderHeight)            
+            headerView.frame = CGRect(x: 0 , y:tableView.contentOffset.y, width: tableView.frame.width, height: -tableView.contentOffset.y)
         }else{
             headerView.frame = CGRect(x: 0 as CGFloat, y: 0, width: tableView.frame.width, height: kTableHeaderHeight)
         }
