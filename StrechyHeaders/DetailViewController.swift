@@ -12,6 +12,11 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
+    override var prefersStatusBarHidden: Bool{
+        get{
+            return true
+        }
+    }
 
     func configureView() {
         // Update the user interface for the detail item.
@@ -19,6 +24,10 @@ class DetailViewController: UIViewController {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
             }
+        }
+        if let navigationController = navigationController {
+            navigationController.isNavigationBarHidden = true
+            navigationController.hidesBarsOnTap = true
         }
     }
 
@@ -33,7 +42,7 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: NSDate? {
+    var detailItem: NewsStory? {
         didSet {
             // Update the view.
             self.configureView()
@@ -42,4 +51,3 @@ class DetailViewController: UIViewController {
 
 
 }
-
